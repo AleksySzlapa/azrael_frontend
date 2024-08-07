@@ -82,6 +82,7 @@ a{
     margin: 10px;
     font-size: 20px;
     color: #8030AC;
+    text-decoration: none;
 }
 
 .sidebar{
@@ -98,10 +99,8 @@ footer{
     justify-content: space-evenly;
 }
 
-.collumn{
-    max-width: 16%;
-    display: flex;
-    flex-direction: column;
+h2{
+    margin-bottom: 10px;
 }
 
 .title_bar{
@@ -117,6 +116,12 @@ footer{
     top: 20px;
     right: -20px;
     width: 80%;
+}
+
+.collumn{
+    max-width: 16%;
+    display: flex;
+    flex-direction: column;
 }
 
 .collumn>*{
