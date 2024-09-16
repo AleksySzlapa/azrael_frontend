@@ -38,7 +38,7 @@ html, body{
 
 .linksWrapper{
     padding: 10px;
-    border-right: 1px solid white;
+    border-right: 1px solid rgba(255, 255, 255, 0.699);
     min-width: 250px;
     width: 250px;
     display: flex;
@@ -81,7 +81,7 @@ button{
 a{
     margin: 10px;
     font-size: 20px;
-    color: #8030AC;
+    color: #9020af;
     text-decoration: none;
 }
 
@@ -133,7 +133,7 @@ h2{
 .collumn>* ~ *{
     font-size: 16px;
     margin: 5px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .watermark_wrapper{
