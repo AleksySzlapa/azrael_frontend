@@ -1,10 +1,10 @@
 import { useState } from "react";
-export default function Smerflator() {
+export default function His_1() {
 // const [sex, setSex] = useState("Sex") /*tak się tworzy zmienne zazwyczaj*/
 
 return (
     <>
-    <p>to wszystko wina tych smerfowanych żydów</p>
+    <p>kys nigga</p>
     </>
 )
 }
