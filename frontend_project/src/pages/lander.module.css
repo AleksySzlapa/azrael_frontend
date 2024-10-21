@@ -16,7 +16,6 @@ html, body{
     color: #FFFFFF;
     padding: 0;
     margin: 0;
-    border: 0px solid red;
 }
 
 .logoWrapper{
@@ -38,7 +37,7 @@ html, body{
 
 .linksWrapper{
     padding: 10px;
-    border-right: 1px solid rgba(255, 255, 255, 0.699);
+    border-right: 1px solid rgba(255, 255, 255, 0.305);
     min-width: 250px;
     width: 250px;
     display: flex;

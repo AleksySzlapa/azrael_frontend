@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
-import './lander.css'
+import styles from './lander.module.css'
 import logo from '/Asset 2.svg';
 import logo_big from '/Asset 3.svg'
 
@@ -31,14 +31,14 @@ export default function Lander_func() {
     ]
 return (
     <>
-        <div className="header">
-            <div className="logoWrapper">
-                <img src={logo} className="logo" alt="Vite logo" />
+        <div className={styles.header}>
+            <div className={styles.logoWrapper}>
+                <img src={logo} className={styles.logo} alt="Vite logo" />
             </div>
             <h1>Dr. Azrael Center</h1>
         </div>
     <main>
-        <div className="linksWrapper">
+        <div className={styles.linksWrapper}>
           <h2>Sites list:</h2>
           {accesible_links_arr.map((page) => (
             <a
@@ -51,26 +51,26 @@ return (
             </a>
           ))}   
         </div>
-        <div className="sidebar">
-            <div className="watermark_wrapper">
+        <div className={styles.sidebar}>
+            <div className={styles.watermark_wrapper}>
                 
             </div>
-            <div className="description_wrapper">
-                {currentPage && <span className="title_bar">{currentPage.page_name}</span>}
+            <div className={styles.description_wrapper}>
+                {currentPage && <span className={styles.title_bar}>{currentPage.page_name}</span>}
                 
-                {currentPage && <span className="description">{currentPage.page_desc}</span>}
+                {currentPage && <span className={styles.description}>{currentPage.page_desc}</span>}
             </div>
         </div>
     </main>
     <footer>
-        <div className="collumn">
-            <img src={logo_big} className="logo" alt="Vite logo" />
+        <div className={styles.collumn}>
+            <img src={logo_big} className={styles.logo} alt="Vite logo" />
         </div>
-        <div className="collumn">
+        <div className={styles.collumn}>
             <span>Dr Azrael Center</span>
             <span>Dr Azrael Center is a web app designed and developed by Aleksy Szłapa for managing and browsing virtual cheet sheets owned by Aleks.</span>
         </div>
-        <div className="collumn">
+        <div className={styles.collumn}>
             <span>Source code & technologies used</span>
             <a href="https://github.com/DrAzrael/azrael_backend/tree/main">back end</a>
             <a href="https://github.com/AleksySzlapa/azrael_frontend/tree/main/frontend_project">front end</a>
@@ -81,13 +81,13 @@ return (
             <a href="https://nodejs.org/en">node</a>
 
         </div>
-        <div className="collumn">
+        <div className={styles.collumn}>
             <span>Documentation</span>
             <a href="">general overview</a>
             <a href="">backend overview</a>
             <a href="">frontend overview</a>
         </div>
-        <div className="collumn">
+        <div className={styles.collumn}>
             <span>Use guides</span>
             <a href="">back end scaling</a>
             <a href="">front end scaling</a>
