@@ -1,31 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import styles from './span_2.module.css'
+import styles from './span_2.module.css';
 import logo from '/Asset 2.svg';
-import lookup from '/search.svg'
+import lookup from '/search.svg';
 
 
 
 export default function Span_2_func() {
+    const [data, setData] = useState([]);
+    const [selectedOption, setSelectedOption] = useState(null);
 
-    const fetchNotes = async () => {
+
+    // Fetch data function
+    const fetchData = async () => {
         try {
-          const response = await fetch('https://azrael-backend.onrender.com/span2');
-          if (!response.ok) {
+        const response = await fetch('https://azrael-backend.onrender.com/span2'); // Replace with your API URL
+        if (!response.ok) {
             throw new Error('Network response was not ok');
-          }
-          const data = await response.json();
-          setNotes(data);
-        } catch (error) {
-          setError(error.message);
-        } finally {
-          setLoading(false);
         }
+        const data = await response.json();
+        setData(data); // Store the fetched data in state
+        } catch (error) {
+        console.error('Error fetching data:', error);
+        }
+    };
+
+    // Fetch data when the component mounts
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const handleClick = (index) => {
+        setSelectedOption(index);
       };
   
-      fetchNotes();
-
-    const [currentPage, setPage] = useState("");
+    
     const accesible_links_arr = [
         {
             page_name: "Example page",
@@ -48,23 +57,29 @@ export default function Span_2_func() {
             page_desc: "This is refrence page4"
         },
     ]
+
+
 return (
     <>
     <div className={styles.top}>
         <span className={styles.header}>
             Spanish chapter 2 cheat sheet
         </span>
-        <div className={styles.search_bar}>
+        {/* <div className={styles.search_bar}>
             <input type="text" className={styles.search_input}/>
             <button className={styles.search_button}>
                 <img src={lookup} className={styles.logo}/>
             </button>
-        </div>
+        </div> */}
     </div>
 
     <div className={styles.main}>
 
-    <div className={styles.left}>
+        <div className={styles.left}>
+            <span className={styles.themes}>
+                Tematy
+            </span>
+            
           {/* <h2>Sites list:</h2>
           {accesible_links_arr.map((page) => (
             <a
@@ -75,8 +90,40 @@ return (
             >
               {page.page_name}
             </a>
+            
           ))}    */}
 
+
+          {/* Dynamically generated content based on fetched data */}
+
+
+
+
+        {data.map((option, index) => (
+            <div
+                key={option._id}
+                onClick={() => handleClick(index)}
+                style={{
+                padding: "10px",
+                width: "170px",
+                borderTopLeftRadius: "15px",
+                borderBottomLeftRadius: "15px",
+                borderLeft: selectedOption === index ? "3px solid red" : "none",
+                borderTop: selectedOption === index ? "3px solid red" : "none",
+                borderBottom: selectedOption === index ? "3px solid red" : "none",
+                borderRight: selectedOption === index ? "none" : "3px solid red",
+                cursor: "pointer",
+                backgroundColor: selectedOption === index ? "#343434" : "#4c4c4c",
+                color: selectedOption === index ? "#fff" : "#999",
+                }}
+            >
+                <span>{option.header}</span>
+            </div>
+            ))}
+
+          
+
+          
           
         </div>
         <div className={styles.right}>
@@ -88,6 +135,18 @@ return (
                 
                 {currentPage && <span className={styles.description}>{currentPage.page_desc}</span>}
             </div> */}
+
+            
+            <span className={styles.header}>
+                {selectedOption !== null ? data[selectedOption].header : ""}
+            </span>
+            
+            <span className={styles.text_block}>
+                {selectedOption !== null ? data[selectedOption].text : ""}
+            </span>
+            
+
+
         </div>
 
     </div>
