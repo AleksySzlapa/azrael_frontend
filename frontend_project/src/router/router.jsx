@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Lander_func from "../pages/lander"; 
 import His_1_func from "../pages/historia_1"; 
 import Page_not_found from "../pages/pageNotFound"; 
+import Span_2_func from "../pages/span_2"; 
 
 import Example_main_function from "../pages/example"; 
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/his_1", /*tu jest ścieżka na jakiej ma się wyświtlać w przeglądarce */ 
     element: <His_1_func />, /*tu dajesz funkcje którą zimportowałeś*/
+  },
+  {
+    path: "/span_2", /*tu jest ścieżka na jakiej ma się wyświtlać w przeglądarce */ 
+    element: <Span_2_func />, /*tu dajesz funkcje którą zimportowałeś*/
   },
   
 ]);
